@@ -12,3 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+//const createItem = (item) => {
+//return  `<li><img src="${item.url}" alt="${item.alt}"><li>;`
+//};
+
+const markup = images
+  .map((item) => `<li><img src="${item.url}" alt="${item.alt}" width = 640></li>`)
+  .join("");
+
+const list = document.querySelector(".gallery").insertAdjacentHTML('afterbegin', markup);
+const navEl = document.querySelector(".gallery");
+navEl.classList.add('js-style__3');
